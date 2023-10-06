@@ -574,18 +574,22 @@ print(binary_search([10, 2, 9, 6, 7, 1, 5, 3, 4, 8], 10))
 print(binary_search([10, 2, 9, 6, 7, 1, 5, 3, 4, 8], 11)) """
 
 
-def linear_search(list, val):
-    for i in range(len(list)):
-        if list[i] == val:
-            return True
-    return False
+def binary_search(list, val):
+    lower_bound = 0
+    upper_bound = len(list) - 1
 
+    while lower_bound <= upper_bound:
+        mid = (lower_bound+upper_bound) // 2
+
+        if list[mid] == val:
+           print(f"The key: {val} found at position {mid + 1} of the list")
+        if list[mid] > val:
+            upper_bound = mid - 1
+        else:
+            lower_bound = mid + 1
+    return f"Sorry the key: {val} not found in the list"
 list = ["Amar","Usatz","Naa","Ukasha","Salim","Aziz","Fuseini"]
 
-if linear_search(sorted(list), "Ukasha"):
-    print(f"Value found")
-
-else:
-    print("Not found")
-
+binary_search(sorted(list), "Ukasha")
+    
 
