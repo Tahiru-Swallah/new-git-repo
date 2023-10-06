@@ -574,24 +574,13 @@ print(binary_search([10, 2, 9, 6, 7, 1, 5, 3, 4, 8], 10))
 print(binary_search([10, 2, 9, 6, 7, 1, 5, 3, 4, 8], 11)) """
 
 
-def binary_search(list, val):
-    left = 0
-    right = len(list) - 1
-
-    print(list)
-
-    while left <= right:
-        middle = (left + right) // 2
-        if list[middle] == val:
-            return f"found at position: {middle + 1}"
-        if list[middle] > val:
-            right = middle - 1
-            
-        if list[middle] < val:
-            left = middle + 1
-            print(f"working on the left side {left}")
+def linear_search(list, val):
+    for i in range(len(list)):
+        if list[i] == val:
+            return i
+    return -1
 list = ["Amar","Usatz","Naa","Ukasha","Salim","Aziz","Fuseini"]
 
-print(binary_search(sorted(list), "Ukasha"))
+print(linear_search(sorted(list), "sakina"))
 
 
