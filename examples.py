@@ -592,4 +592,3 @@ list = ["Amar","Usatz","Naa","Ukasha","Salim","Aziz","Fuseini"]
 
 binary_search(sorted(list), "Ukasha")
     
-
